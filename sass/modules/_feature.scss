@@ -1,0 +1,134 @@
+.feature {
+	display: flex;
+	flex-wrap: wrap;
+	margin: 16px;
+	@include notebook {
+		margin: 64px;
+		flex-wrap: nowrap;
+	}
+	@include desktop {
+		padding: 0 64px;
+		margin: 64px auto;
+	}
+	&__hed {
+		@include hedfont;
+		color: $text-color;
+		font-size: 28px;
+		margin-bottom: 18px;
+		@include notebook {
+			font-size: 36px;
+			margin-bottom: 24px;
+		}
+		&:after {
+			content: '';
+			display: block;
+			height: 4px;
+			width: 79px;
+			background-color: $accent-one;
+			margin-top: 16px;
+			@include notebook {
+				margin-top: 22px;
+			}
+		}
+	}
+	&__dek {
+		color: $text-color-alt-2;
+		font-size: 16px;
+		line-height: 1.47;
+		margin-bottom: 18px;
+		@include notebook {
+			font-size: 18px;
+			margin-bottom: 24px;
+		}
+		a {
+			color: $link-color;
+			text-decoration: underline;
+			&:hover,
+			&:focus{
+				color: $link-hover;
+			}
+		}
+	}
+	&__button-container {
+		display: flex;
+		flex-wrap: wrap;
+		a  {
+			width: calc(30% - 20px);
+		}
+	}
+	&__button-two {
+		margin-left: 16px;
+	}
+	&__image-wrapper {
+		display: block;
+    position: relative;
+		margin-bottom: 28px;
+		flex-shrink: 0;
+		width: 100%;
+		picture {
+			overflow: hidden;
+			position: relative;
+			height: 0;
+    	padding-top: 79.8%;
+			@include notebook {
+				height: 100%;
+    		padding-top: 0;
+			}
+			img {
+				width: 100%;
+				height: auto;
+				position: absolute;
+				left: 50%;
+				top: 50%;
+				transform: translate(-50%,-50%);
+			}
+		}
+		@include notebook {
+			width: 50%;
+			min-height: 225px;
+			margin-bottom: 0;
+		}
+		@include desktop {
+			min-height: 320px;
+		}
+	}
+	&__text-wrapper {
+		width: 100%;
+		&--left {
+			margin-bottom: 32px;
+		}
+		&--right {
+			margin-top: 32px;
+		}
+		@include notebook {
+			width: 50%;
+			&--left {
+				padding-right: 54px;
+				margin-bottom: 0;
+			}
+			&--right {
+				padding-left: 54px;
+				margin-top: 0;
+			}
+		}
+	}
+	&--team {
+		padding: 40px 20px 0;
+		max-width: 700px;
+		margin: auto;
+		@include notebook {
+			padding: 115px 0 0;
+		}
+	}
+	&--fellowship {
+		@include notebook {
+			margin: 64px auto 0;
+		}
+	}
+	&--partners {
+		margin-bottom: 0;
+		@include notebook {
+			margin-bottom: 0;
+		}
+	}
+}

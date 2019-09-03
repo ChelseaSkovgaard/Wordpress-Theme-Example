@@ -1,0 +1,40 @@
+.grid-partners{
+	&__section {
+		padding: 20px;
+		@include notebook {
+			padding-bottom: 60px;
+		}
+	}
+	&__grid {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+	&__link {
+		display: block;
+		margin: 52px;
+	}
+	&__image-wrapper {
+		position: relative;
+		width: 135px;
+		height: 135px;
+		picture {
+			display: block;
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			img {
+				-webkit-filter: grayscale(100%);
+				filter: grayscale(100%);
+				width: 100%;
+				height: auto;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%,-50%);
+			}
+		}
+	}
+}

@@ -1,0 +1,213 @@
+h1,h2,h3,h4,h5,h6 {
+	@include hedfont;
+	line-height: 1.15;
+	margin: 1em 0 0.35em;
+	font-weight: bold;
+	color: $text-color;
+}
+
+h1 {
+	font-size: 28px;
+	text-transform: uppercase;
+	@include phablet {
+		font-size: 36px;
+	}
+	@include notebook {
+		font-size: 48px;
+	}
+	@include desktop {
+		font-size: 52px;
+	}
+}
+
+h2 {
+	font-size: 28px;
+	@include phablet {
+		font-size: 36px;
+	}
+	@include notebook {
+		font-size: 48px;
+	}
+	@include desktop {
+		font-size: 52px;
+	}
+}
+
+h3 {
+	font-size: 22px;
+	@include phablet {
+		font-size: 26px;
+	}
+	@include notebook {
+		font-size: 38px;
+	}
+	@include desktop {
+		font-size: 42px;
+	}
+}
+
+h4 {
+	font-size: 18px;
+	@include phablet {
+		font-size: 24px;
+	}
+	@include notebook {
+		font-size: 34px;
+	}
+	@include desktop {
+		font-size: 36px;
+	}
+}
+
+h5 {
+	font-size: 16px;
+	@include phablet {
+		font-size: 22px;
+	}
+	@include notebook {
+		font-size: 30px;
+	}
+	@include desktop {
+		font-size: 32px;
+	}
+}
+
+h6 {
+	font-size: 14px;
+	@include phablet {
+		font-size: 16px;
+	}
+	@include notebook {
+		font-size: 28px;
+	}
+	@include desktop {
+		font-size: 30px;
+	}
+}
+
+p {
+	margin: 1.2em 0;
+}
+
+ul,ol{
+	margin: 1rem 0 1rem 1.5rem;
+	@include phablet {
+		margin: 1rem 0 1rem 2.5rem;
+	}
+	@include medium {
+		margin: 1.5rem 0 1rem 3.5rem;
+	}
+}
+
+ul{
+	list-style: disc;
+}
+
+ol{
+	list-style-type: decimal;
+}
+
+li{
+	margin: 0.5em 0;
+	@include medium {
+		margin: 0.75em 0;
+	}
+}
+
+dl {
+	margin: 1.2em 0;
+}
+
+dt {
+	font-weight: bold;
+}
+
+dd {
+	margin: 0 0 0.5em;
+	padding-left: 1rem;
+}
+
+a {
+	color: $link-color;
+	text-decoration: underline;
+	&:hover,
+	&:focus{
+		color: $link-hover;
+	}
+}
+
+blockquote{
+	margin: 1rem 0;
+	padding: 1rem 45px;
+	position: relative;
+	@include phablet {
+		margin: 2rem 0;
+	}
+	@include notebook {
+		padding: 1.25rem 45px;
+	}
+	p {
+		@include hedfont;
+		font-size: 22px;
+		color: $text-color-alt-2;
+		text-align: center;
+		span {
+			color: $accent-one;
+		}
+		@include notebook {
+			font-size: 32px;
+		}
+	}
+	> *:first-child {
+		margin-top: 0;
+	}
+	> *:last-child {
+		margin-bottom: 0;
+	}
+	&:before {
+		content: '';
+		display: inline;
+		width: 43px;
+		height: 28px;
+		background-image: url('#{$imgPath}/quote.png');
+		position: absolute;
+		left: 0;
+		@include notebook {
+
+		}
+	}
+	&:after {
+		content: '';
+		display: block;
+		background-color: $accent-one;
+		height: 4px;
+		width: 79px;
+		margin: auto;
+		margin-top: 20px;
+	}
+}
+
+strong,
+b,
+th {
+	font-weight: 700;
+}
+
+em,i {
+	font-style: italic;
+}
+
+code{
+	font-family: "Lucida Console", Monaco, monospace;
+	font-size: 0.9em;
+}
+
+table {
+	width: 100%;
+	margin: 1.2em 0;
+}
+
+td,th {
+	border: 1px solid $black;
+	padding: 0.2em;
+}

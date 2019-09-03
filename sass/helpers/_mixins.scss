@@ -1,0 +1,75 @@
+// Media Queries
+$phoneonly:	480px;
+$phone:	481px;
+$phablet: 600px;
+$tablet: 768px;
+$notebook: 980px;
+$medium: 1050px;
+$desktop: 1200px;
+$huge: 1320px;
+
+@mixin phoneonly { @media screen and (max-width: #{$phoneonly}) {@content;} }
+@mixin phone { @media screen and (min-width: #{$phone}) {@content;} }
+@mixin phablet { @media screen and (min-width: #{$phablet}) {@content;} }
+@mixin tablet { @media screen and (min-width: #{$tablet}) {@content;} }
+@mixin notebook { @media screen and (min-width: #{$notebook}) {@content;} }
+@mixin medium { @media screen and (min-width: #{$medium}) {@content;} }
+@mixin desktop { @media screen and (min-width: #{$desktop}) {@content;} }
+@mixin huge { @media screen and (min-width: #{$huge}) {@content;} }
+
+// Misc.
+$imgPath: "/wp-content/themes/wp-ace-site/images";
+$fontPath: "/wp-content/themes/wp-ace-site/fonts";
+
+@mixin bodyfont {
+  font-family: 'Trade Gothic', 'Helvetica Neue', Helvetica, sans-serif;
+  font-weight: 300;
+}
+
+@mixin hedfont {
+  font-family: neue-haas-grotesk-display, sans-serif;
+	font-weight: 700;
+}
+
+@mixin monofont {
+	font-family: Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace;
+}
+
+@mixin smooth {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@mixin maxWidth { // Max-width elements
+	max-width:1200px;
+	position:relative;
+	margin:0 auto;
+}
+
+// Form Mixins
+@mixin noiOS { // Remove Mobile appearance on Form Elements
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+}
+
+@mixin clipIt { // Label invisible to user, visible to screen-reader
+  @extend %clipIt;
+}
+
+%clipIt { // Label invisible to user, visible to screen-reader
+  position: absolute;
+  height: 1px; width: 1px;
+  overflow: hidden;
+  clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px);
+}
+
+@mixin placeholder {  // Styling placeholder text
+  &::-webkit-input-placeholder {@content}
+  &:-moz-placeholder           {@content}
+  &::-moz-placeholder          {@content}
+  &:-ms-input-placeholder      {@content}
+}
+

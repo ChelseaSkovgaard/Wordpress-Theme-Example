@@ -1,0 +1,103 @@
+.banner {
+	background: $background-alt;
+	position: relative;
+	padding: 70px;
+	margin: 0 4px;
+	@include notebook {
+		padding: 90px;
+		margin: 0 12px;
+	}
+	&__hed {
+		@include hedfont;
+		color: $text-color-alt;
+		font-size: 28px;
+		margin-bottom: 18px;		
+		text-align: center;
+		@include tablet {
+			font-size: 36px;
+			margin-bottom: 24px;
+		}
+		&:after {
+			content: '';
+			display: block;
+			height: 4px;
+			width: 79px;
+			background-color: $accent-one;
+			margin: 16px auto 0;
+			@include tablet {
+				margin: 22px auto 0;
+			}
+		}
+	}
+	&__dek {
+		@include hedfont;
+		color: $text-color-alt;
+		font-size: 16px;
+		font-weight: 600;
+		line-height: 1.33;
+		margin-bottom: 22px;
+		text-align: center;
+		@include tablet {
+			font-size: 18px;
+			margin-bottom: 37px;
+		}
+	}
+	&__button {
+		margin: auto;
+	}
+	&__text-wrapper {
+		position: relative;
+		z-index: 3;
+		max-width: 550px;
+		margin: auto;
+	}
+	&__image-wrapper {
+		display: block;
+		height: auto;
+		width: 100%;
+		overflow: hidden;
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		picture {
+			display: block;
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			img {
+				width: 100%;
+				height: auto;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%,-50%);
+			}
+		}
+		&:before {
+			content: "";
+			display: block;
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			z-index: 1;
+			background: radial-gradient(rgba(7, 31, 43, .3), rgba(7, 31, 43, .2));
+		}
+		&:after {
+			content: "";
+			display: block;
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			z-index: 2;
+			background: linear-gradient(rgba(7, 31, 43, .3), rgba(7, 31, 43, .6));
+		}
+	}
+}

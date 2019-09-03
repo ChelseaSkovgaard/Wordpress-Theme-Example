@@ -1,0 +1,51 @@
+.inbed {
+  position: relative;
+  height: 0; overflow: hidden;
+	&.inbed-video {
+		padding-bottom: 56.25%;
+		& .youtube {}
+		& .vimeo {}
+		& .vine {}
+		& .ustream {}
+		& .msnbc {}
+	}
+	&.inbed-image {
+		padding-bottom: 78.25%;
+		& .flickr {}
+		& .instagram {}
+	}
+	&.inbed-audio {
+	  padding-bottom: 18.25%;
+		& .soundcloud {}
+	}
+	&.today {
+		padding-bottom: calc(56.25% + 75px);
+	}
+	&.msnbc {
+		padding-bottom: calc(56.25% + 100px);
+	}
+	&.square {
+		padding-bottom: 100%;
+	}
+
+	&.inbed-story {
+		& .storify {}
+		& .twitter {}
+		& .twitter-conversation {}
+	}
+	&.inbed-form {
+		& .wufoo {}
+		& .kimbia {}
+	}
+	&.inbed-code {
+		& .gist {}
+	}
+  iframe, object, embed {
+	  position: absolute;
+	  top: 0; bottom: 0;
+	  left: 0; right: 0;
+	  width: 100%;
+	  height: 100%;
+  }
+}
+// polldaddy & twitter-timeline need to be placed

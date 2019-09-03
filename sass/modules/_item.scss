@@ -1,0 +1,85 @@
+.item {
+	display: flex;
+	flex-wrap: wrap;
+	max-width: 1191px;
+	margin: 20px;
+	@include tablet {
+		margin: 64px;
+		flex-wrap: nowrap;
+	}
+	@include desktop {
+		padding: 0 64px;
+		margin: 64px auto;
+	}
+	&__image-wrapper {
+		display: block;
+    position: relative;
+		margin-bottom: 28px;
+		flex-shrink: 0;
+		width: 100%;
+		picture {
+			overflow: hidden;
+			position: relative;
+			height: 0;
+			padding-top: 60%;
+			@include tablet {
+				height: 100%;
+    		padding-top: 0;
+			}
+			img {
+				width: 100%;
+				height: auto;
+				position: absolute;
+				left: 50%;
+				top: 50%;
+				transform: translate(-50%,-50%);
+			}
+		}
+		@include tablet {
+			width: 41%;
+			min-height: 225px;
+			margin-right: 40px;
+			margin-bottom: 0;
+		}
+		@include desktop {
+			min-height: 300px;
+		}
+	}
+	&__text-wrapper {
+		width: 100%;
+		@include tablet {
+			width: 59%;
+			margin-right: 40px;
+		}
+	}
+	&__hed {
+		@include hedfont;
+		color: $text-color;
+		font-size: 28px;
+		margin-bottom: 12px;
+		@include tablet {
+			font-size: 36px;
+			margin-bottom: 16px;
+		}
+		span {
+			color: $accent-one;
+		}
+	}
+	&__author {
+		@include hedfont;
+		color: $accent-one;
+		font-size: 17px;
+		line-height: 1.17;
+		margin-bottom: 12px;
+	}
+	&__dek {
+		color: $text-color;
+		font-size: 16px;
+		line-height: 1.38;
+		margin-bottom: 12px;
+		@include tablet {
+			font-size: 18px;
+			margin-bottom: 16px;
+		}
+	}
+}

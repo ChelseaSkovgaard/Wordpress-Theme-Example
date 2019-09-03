@@ -1,0 +1,291 @@
+.header {
+	.nav {
+		display: inline-block;
+		&__item {
+			@include bodyfont;
+			display: block;
+			position: relative;
+			margin-bottom: 37px;
+			@include notebook {
+				display: inline-block;
+				margin-bottom: 0;
+				&:hover {
+					.sub-menu {
+						display: block;
+					}
+				}
+			}
+		}
+		&__link {
+			@include hedfont;
+			display: inline-block;
+			color: $text-color;
+			font-size: 25px;
+			letter-spacing: 0.11em;
+			line-height: 1.21;
+			text-transform: uppercase;
+			@include notebook {
+				display: flex;
+				align-items: center;
+				color: $link-color-alt;
+				font-size: 14px;
+				padding: 30px 12px;
+			}
+			@include huge {
+				padding: 30px 15px;
+			}
+			&:hover, &:focus {
+				color: $accent-one;
+				text-decoration: none;
+				.nav__arrow {
+					fill: $accent-one;
+				}
+			}
+			&--active {
+				color: $accent-one;
+			}
+		}
+		&__arrow {
+			fill: $svg-fill;
+			margin-left: 6px;
+			width: 22px;
+			height: 14px;
+			margin-left: 6px;
+			margin-bottom: 3px;
+			@include notebook {
+				fill: $svg-fill-alt;
+				width: 11px;
+				height: 7px;
+				margin-left: 6px;
+				margin-bottom: 0;
+			}
+			&--desktop{
+				display: none;
+				@include notebook {
+					display: inline-block;
+				}
+			}
+			&--mobile {
+				display: inline-block;
+				@include notebook {
+					display: none;
+				}
+			}
+			&--active {
+				fill: $accent-one;
+				transform: rotate(180deg);
+			}
+		}
+	}
+	.sub-menu {
+		display: none;
+		@include notebook {
+			position: absolute;
+			width: 180px;
+			left: -40px;
+			top: 64px;
+			z-index: 5;
+			background-color: $background;
+			border-radius: 2px;
+			box-shadow: 0 2px 18px 0 rgba(0,0,0,0.34);
+			padding: 8px 0;
+		}
+		.nav {
+			&__item {
+				width: 100%;
+				margin-bottom: 0;
+			}
+			&__link {
+				color: $submenu-text;
+				font-size: 19px;
+				font-weight: 600;
+				letter-spacing: 0;
+				text-transform: none;
+				padding: 9px 0;
+				margin-right: 0;
+				&:focus, &:hover {
+					color: $accent-one;
+					text-decoration: none;
+				}
+				@include notebook {
+					background-color: $background;
+					color: $text-color-alt-2;
+					line-height: 1.21;
+					font-size: 14px;
+					letter-spacing: 0.11em;
+					padding: 10px 16px;
+					&:hover {
+						background-color: $accent-one;
+						color: $link-color-alt;
+						text-decoration: none;
+					}
+					&:focus {
+						background-color: $accent-one;
+						color: $accent-focus;
+					}
+				}
+				@include huge {
+					padding: 10px 15px;
+				}
+			}
+		}
+		&:before {
+			display:block;
+			content: '';
+			width: 0;
+			height: 0;
+			border-left: 6px solid transparent;
+			border-right: 6px solid transparent;
+			border-bottom: 6px solid $border-color-alt-2;
+			position: absolute;
+			top: -6px;
+			right: 50%;
+			left: 50%;
+		}
+		&--expand {
+			display: block;
+		}
+	}
+		// social media in header nav
+	.sm-wrapper-header {
+		order: 4;
+		margin-top: 24px;
+		@include notebook {
+			order: 0;
+			margin-top: 0;
+		}
+	}
+	.sm-nav {
+		display: flex;
+		@include notebook {
+			display:none;
+		}
+		@include huge {
+			display: flex;
+			margin-right: 30px;
+		}
+		&__link {
+			margin: 0 21px;
+			@include notebook {
+				margin: 0 7.5px;
+			}
+		}
+		&__icon {
+			fill: $svg-fill;
+			@include notebook {
+				fill: $svg-fill-alt;
+			}
+			&:hover {
+				fill: $accent-one;
+			}
+			&--facebook {
+				height: 26.14px;
+				width: 12.5px;
+				@include notebook {
+					height: 16.73px;
+					width: 8px;
+				}
+			}
+			&--twitter {
+				height: 23.73px;
+				width: 27.68px;
+				@include notebook {
+					height: 15.14px;
+					width: 17.66px;
+				}
+			}
+			&--instagram {
+				height: 27px;
+				width: 28px;
+				@include notebook {
+					height: 17px;
+					width: 18px;
+				}
+			}
+		}
+	}
+
+	//Donate Button in Header Nav w/ dropdown
+	.donate-header {
+		position: relative;
+		max-width: 100%;
+		@include notebook {
+			padding: 10px 0;
+		}
+		&__sub {
+			display:none;
+			position: absolute;
+			width: 227px;
+			left: -94px;
+			top: 64px;
+			z-index: 1;
+			background-color: $background;
+			border-radius: 2px;
+			box-shadow: 0 2px 18px 0 rgba(0,0,0,0.34);
+			&:before {
+				display:block;
+				content: '';
+				width: 0;
+				height: 0;
+				border-left: 6px solid transparent;
+				border-right: 6px solid transparent;
+				border-bottom: 6px solid $border-color-alt-2;
+				position: absolute;
+				top: -6px;
+				right: 24%;
+			}
+		}
+		@include notebook {
+			&:hover {
+				// Keep hover state
+				&::before {
+					content: '';
+					position: absolute;
+					bottom: -20px;
+					left: -20px;
+					right: 0;
+					height: 40px;
+				}
+				.donate-header__sub {
+					display: block;
+				}
+			}
+		}
+		&__subtext {
+			@include hedfont;
+			color: $submenu-text;
+			font-size: 15px;
+			font-weight: 600;
+			line-height: 1.33;
+			text-align: center;
+			padding: 27px 30px;
+		}
+		&__sublink {
+			@include hedfont;
+			background-color: $background-alt;
+			color: $link-color-alt;
+			font-size: 14px;
+			letter-spacing: 0.11em;
+			line-height: 1.21;
+			text-transform: uppercase;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			padding: 18px 20px;
+			&:hover {
+				color: $accent-one;
+				text-decoration: none;
+			}
+			&:focus {
+				color: $accent-focus;
+			}
+		}
+		&__icon {
+			fill: $accent-one;
+			height: 15px;
+			width: 7px;
+			margin-left: 6px;
+		}
+	}
+}
+

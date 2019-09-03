@@ -1,0 +1,29 @@
+.entry {
+  &__body {
+	  color: $text-color-alt-2;
+	  line-height: 1.5;
+	  max-width: 700px;
+		margin: 0 auto;
+		padding: 40px 18px;
+	  @include tablet {
+		  font-size: 19px;
+	  }
+	  // content area helpers
+    @import "../helpers/entry_body";
+    @import "../helpers/entry_img";
+    @import "../helpers/gutenberg";
+    @import "../helpers/button";
+    @import "../helpers/callout";
+    > *:first-child {
+		  margin-top: 0;
+	  }
+	  > *:last-child {
+		  margin-bottom: 0;
+	  }
+	  &::after {
+		  content: '';
+		  display: table;
+		  clear: both;
+	  }
+  }
+}

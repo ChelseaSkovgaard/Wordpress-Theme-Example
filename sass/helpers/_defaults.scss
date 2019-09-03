@@ -1,0 +1,127 @@
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+body {
+  @include smooth;
+	@include bodyfont;
+  font-size:100%;
+  line-height:1;
+}
+a {
+  margin:0;
+  padding:0;
+  font-size:100%;
+  vertical-align:baseline;
+  background:transparent;
+  text-decoration:none;
+}
+a:hover {
+  text-decoration:underline;
+}
+a:hover,a:active {
+  outline:0;
+}
+abbr[title],dfn[title]{
+  border-bottom:1px dotted;
+  cursor:help;
+}
+blockquote {
+  quotes:none;
+}
+del{
+	text-decoration:line-through;
+}
+pre,code,kbd,samp {
+	white-space:pre;
+	white-space:pre-wrap;
+	word-wrap:break-word;
+	@include monofont;
+}
+b,strong {
+	font-weight: bold;
+}
+i,em {
+	font-style: italic;
+}
+picture {
+	display: block;
+}
+svg {
+	display: block;
+	overflow: visible;
+}
+object,embed {
+	display: block;
+	width:100%;
+	height:auto;
+}
+ins {
+  background: $background;
+  color:$black;
+  text-decoration:none;
+}
+mark {
+  background:darken($background, 10%);
+  color:$black;
+  font-style:italic;
+  font-weight:bold;
+}
+// Responsive Embeds
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%;
+	iframe, object, embed {
+		position: absolute;
+		top: 0; bottom: 0;
+	  left: 0; right: 0;
+		width: 100%;
+		height: 100%;
+	}
+}
+form {
+	margin:0;
+}
+fieldset {
+	border:0;
+	margin:0;
+	padding:0;
+}
+input {
+	@include placeholder {
+		opacity: 1;
+		color: inherit;
+	}
+}
+input,select{
+	line-height: normal;
+  vertical-align:middle;
+}
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="tel"],
+input[type="search"],
+input[type="number"],
+input[type="password"],
+select,
+textarea {
+	@include noiOS;
+}
+label,
+input[type=submit] {
+	cursor:pointer;
+}
+legend {
+	border:0;
+	padding:0;
+}
+// Access menu visible to screen-readers
+#access,
+.assistive-text {
+  @include clipIt;
+}
+// Re-targeting Pixel Begone
+.img.dbclk {
+	display:none !important;
+}

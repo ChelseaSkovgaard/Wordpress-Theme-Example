@@ -1,0 +1,85 @@
+.home-section {
+	padding: 32px 0 47px;
+	@include notebook {
+		padding: 64px 0 96px;
+	}
+	&__hed {
+		@include hedfont;
+		font-size: 25px;
+		text-align: center;
+		line-height: 1.4;
+		text-shadow: 0 2px 4px 0 rgba(0,0,0,0.5);
+		margin-bottom: 16px;
+		padding: 0 18px;
+		@include notebook {
+			font-size: 36px;
+			margin-bottom: 22px;
+		}
+		&:after {
+			content: '';
+			height: 4px;
+			width: 79px;
+			background: $accent-one;
+			display: block;
+			margin: 16px auto 0;
+			@include tablet {
+				margin: 22px auto 0;
+			}
+		}
+	}
+	&__dek {
+		color: $text-color-alt;
+		font-size: 18px;
+		line-height: 1.38;
+		text-align: center;
+		margin: auto;
+		max-width: 550px;
+		margin-bottom: 32px;
+		padding: 0 18px;
+		@include notebook {
+			margin-bottom: 47px;
+		}
+		&--fellow {
+			@include notebook {
+				margin-bottom: 18px;
+			}
+		}
+	}
+	&__button {
+		margin: auto;
+		box-sizing: border-box;
+		width: calc(100% - 36px);
+		max-width: 322px;
+		margin-top: 32px;
+		@include notebook {
+			min-width: 216px;
+			width: auto;
+			max-width: none;
+			margin-top: 40px;
+		}
+	}
+	&--dark {
+		background-color: $background-alt;
+		.home-section__hed {
+			color: $text-color-alt;
+		}
+	}
+	&--light {
+		margin: 4px;
+		@include notebook {
+			margin: 12px;
+		}
+		.home-section__hed {
+			color: $text-color;
+		}
+		.home-section__dek {
+			color: $text-color-alt-2;
+		}
+	}
+	&--interior {
+		margin: 4px;
+		@include notebook {
+			margin: 12px;
+		}
+	}
+}

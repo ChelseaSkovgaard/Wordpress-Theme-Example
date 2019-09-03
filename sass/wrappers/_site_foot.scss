@@ -1,0 +1,84 @@
+.footer {
+	background-color: $background-alt;
+	padding: 50px 16px 22px;
+	margin: 4px;
+	@include notebook {
+		padding: 52px 40px 22px;
+		margin: 12px;
+	}
+	&__wrapper {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		@include notebook {
+			flex-direction: row;
+			align-items: flex-start;
+			justify-content: space-around;
+		}
+	}
+	&__hed {
+		margin-bottom: 32px;
+		@include notebook {
+			margin-bottom: 38px;
+		}
+	}
+	&__logo {
+		height: 74px;
+		width: 224px;
+	}
+	&__column {
+		@include notebook {
+			margin-right: 5.5%;
+			margin-top: 20px;
+		}
+		&--hed {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			@include notebook {
+				margin-right: 11%;
+				margin-top: 0;
+				align-items: flex-start;
+			}	
+		}
+	}
+	&__donate-btn {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 100%;		
+		@include notebook {
+			width: auto;
+			margin-top: 20px;
+		}
+		&--mobile {
+			@include notebook {
+				display: none;
+			}
+		}
+		&--desktop {
+			display: none;
+			@include notebook {
+				display: flex;
+			}
+		}
+	}
+	&__pp {
+		display: block;
+		@include hedfont;
+		color: $text-color-alt;	
+		font-size: 15px;	
+		font-weight: 500;
+		line-height: 31px;	
+		opacity: 0.55;
+		text-align: center;
+		text-shadow: 1px 1px 4px 0 rgba(0,0,0,0.5);
+		margin-top: 16px;
+		&:hover {
+			opacity: 1;
+			text-decoration: none;
+		}
+	}
+}

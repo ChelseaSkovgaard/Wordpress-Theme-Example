@@ -1,0 +1,109 @@
+.cta {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: $accent-one;
+	position: relative;
+	box-sizing: border-box;
+	margin: 4px;
+	padding: 45px;
+	@include tablet {
+		min-height: 400px;
+	}
+	@include notebook {
+		margin: 12px;
+	}
+	&__content-wrapper {
+		position: relative;
+		z-index: 2;
+	}
+	&__hed {
+		@include hedfont;
+		color: $text-color-alt;
+		font-size: 35px;
+		margin-bottom: 16px;
+		text-align: center;
+		@include tablet {
+			font-size: 42px;
+			margin-bottom: 32px;
+		}
+		span,
+		b,strong {
+			color: $text-color;
+		}
+	}
+	&__dek {
+		color: $text-color-alt;
+		font-size: 18px;
+		line-height: 1.38;
+		text-align: center;
+		margin: 0 auto 24px;
+		max-width: 470px;
+	}
+	&__button {
+		@include hedfont;
+		display: table;
+		background-color: transparent;
+		color: $text-color-alt;
+		border: 2px solid $border-color-alt-2;
+		border-radius: 22.5px;
+		font-size: 14px;
+		letter-spacing: 0.11em;
+		line-height: 1.21;
+		text-align: center;
+		text-transform: uppercase;
+		margin: 24px auto 16px;
+		padding: 10px 80px;
+		&:hover {
+			color: $text-color-alt;
+			background: linear-gradient(270deg, #0D3043 0%, #071F2B 100%);
+			border: none;
+			text-decoration: none;
+			padding: 12px 82px;
+		}
+	}
+	&__image-wrapper {
+		display: none;
+		height: auto;
+		width: 100%;
+		overflow: hidden;
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		picture {
+			display: block;
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			img {
+				width: 100%;
+				height: auto;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%,-50%);
+			}
+		}
+		@include tablet {
+			display: block;
+		}
+		&:after {
+			content: '';
+			display: block;
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			z-index: 1;
+			background-image: radial-gradient(circle, rgba(151,201,61,0.96) 0%, rgba(151,201,61,0.88) 19.28%, rgba(151,201,61,0.83) 55.77%, rgba(151,201,61,0.7) 81.99%, rgba(151,201,61,0) 100%);
+		}
+	}
+
+}
+
+

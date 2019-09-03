@@ -1,0 +1,157 @@
+.header {
+	position: absolute;
+  top: auto;
+  left: 0;
+  right: 0;
+	z-index: 4;
+	padding: 10px;
+	@include notebook {
+		display: flex;
+		justify-content: space-between;
+		align-content: center;
+		padding: 35px 35px;
+	}
+	@include huge {
+		padding: 35px 60px;
+	}
+	&__logo {
+		height: 47px;
+		width: 142px;
+		@include notebook {
+			height: 67px;
+			width: 203px;
+			margin-right: 28px;
+		}
+		@include huge {
+			margin-right: 70px;
+		}
+	}
+	&__icon {
+		width: 25px;
+		height: 25px;
+		&--open {
+			fill: $svg-fill-alt;
+		}
+		&--close {
+			fill: $accent-one;
+		}
+	}
+	&__nav-wrap {
+		display: none;
+		background-color: $background;
+		margin: 0 4px;
+		padding: 86px 16px 42px;
+		@include notebook {
+			display: flex;
+			align-items: center;
+			flex-direction: row;
+			background-color: transparent;
+			margin: 0;
+			padding: 0;
+		}
+		body.expand & {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			z-index: 5;
+			@include notebook{
+				position: relative;
+				flex-direction: row;
+			}
+		}
+	}
+	&__btn {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		position: absolute;
+    top: 19px;
+    right: 19px;
+		z-index: 6;
+		background: transparent;
+		border: none;
+		font-size: 20px;
+		padding: 0;
+		cursor: pointer;
+		@include notebook {
+			display: none !important;
+		}
+		&--open {
+			.expand & {
+				display: none;
+			}
+		}
+		&--close {
+			display: none;
+			.expand & {
+				display: flex;
+			}
+		}
+	}
+	&__join-btn {
+		box-sizing: border-box;
+		border: 2px solid $accent-one;
+		background-color: $background;
+		color: $text-color;
+		width: 322px;
+		max-width: 100%;
+		margin-bottom: 28px;
+		@include notebook {
+			background-color: rgba(13,48,67,0.3);
+			color: $text-color-alt;
+			width: auto;
+			padding: 10px 28px;
+			margin-right: 17px;
+			margin-bottom: 0;
+			&:hover {
+				border: none;
+				padding: 12px 30px;
+				background: linear-gradient(270deg, #97C93D 0%, #73AA04 100%);
+			}
+		}
+		&--hide {
+			@include notebook {
+				display: none;
+			}
+			@include huge {
+				display: block;
+			}
+		}
+	}
+	&__donate-btn {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		position: relative;
+		box-sizing: border-box;
+		width: 322px;
+		max-width: 100%;
+		@include notebook {
+			width: auto;
+			padding: 12px 23px;
+			&:hover {
+				padding: 12px 23px;
+			}
+		}
+	}
+}
+
+.expand {
+	&:after {
+		content: '';
+		position: absolute;
+		display: block;
+		position: fixed;
+		top: 0;
+		left: 0;
+		height: 100%;
+		width: 100%;
+		z-index: 1;
+		background-color: rgba(0,0,0,0.2);
+	}
+}

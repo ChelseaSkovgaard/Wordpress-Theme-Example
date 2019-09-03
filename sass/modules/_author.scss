@@ -1,0 +1,68 @@
+.author {
+	display: flex;
+	flex-wrap: wrap;
+	max-width: 700px;
+	margin: 0 auto;
+	padding: 60px 18px 0;
+	border-top: 4px $accent-one solid;
+	justify-content: center;
+	@include tablet {
+		justify-content: flex-start;
+	}
+	&__hed {
+		@include hedfont;
+		color: $accent-one;
+		font-size: 20px;
+		margin-top: 11px;
+		@include notebook {
+			font-size: 28px;
+		}
+	}
+	&__sub {
+		color: $text-color;
+		font-size: 14px;
+		text-transform: uppercase;
+		margin-top: 8px;
+	}
+	&__dek {
+		color: $text-color;
+		font-size: 15px;
+		line-height: 1.46;
+		margin-top: 8px;
+		p {
+			margin-top: 16px;
+		}
+	}
+	&__content-wrapper {
+		max-width: 536px;
+	}
+	&__image-wrapper {
+		width: 138px;
+		height: 138px;
+		position: relative;
+		margin-right: 22px;
+		img {
+			border-radius: 50%;
+			position: relative;
+			z-index: 3;
+			display: block;
+			width: 100%;
+			height: auto;
+		}
+		&:after {
+			content: "";
+			display: inline-block;
+			position: absolute;
+			background: $accent-one;
+			width: 146px;
+			height: 146px;
+			border-radius: 50%;
+			top: -4px;
+			left: -4px;
+			z-index: 2;
+		}
+	}
+	&--guest {
+		padding: 26px 18px 0;
+	}
+}

@@ -1,0 +1,63 @@
+.toggle {
+  position: relative;
+  height: 50px;
+  width: 300px;
+  margin: 60px auto 0;
+  background: white;
+  border-radius: 25px;
+	border: 2px solid #0D3043;
+	@include notebook {
+		width: 400px;
+	}
+	&__label {
+		@include hedfont;
+		position: relative;
+		z-index: 2;
+		float: left;
+		width: 148px;
+		line-height: 50px;
+		letter-spacing: 0.039em;
+		font-size: 15px;
+		color: $text-color;
+		text-align: center;
+		&:active {
+			font-weight: bold;
+		}
+		@include notebook {
+			font-size: 20px;
+			width: 198px;
+		}
+	}
+	&__input {
+		@include clipIt;
+	}
+	&__selection {
+		position: absolute;
+		z-index: 1;
+		top: 0;
+		left: -1px;
+		display: block;
+		width: 148px;
+		height: 50px;
+		border-radius: 24px 0 0 24px;
+		background-color: $background-alt;
+		transition: left 0.15s ease-out;
+		@include notebook {
+			width: 198px;
+		}
+	}
+}
+
+.toggle__input:checked + .toggle__label {
+  font-weight: bold;
+  color: $text-color-alt;
+  transition: color 0.15s ease-out;
+}
+
+.toggle__input:checked + .toggle__label-on ~ .toggle__selection {
+  left: 153px;
+	border-radius: 0 24px 24px 0;
+	@include notebook {
+		left: 203px;
+	}
+}

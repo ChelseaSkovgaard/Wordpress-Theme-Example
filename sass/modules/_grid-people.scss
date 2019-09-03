@@ -1,0 +1,103 @@
+.grid-people{
+	&__section {
+		margin: 40px auto 40px;
+		@include notebook {
+			margin: 60px auto 80px;
+		}
+	}
+	&__header {
+		@include hedfont;
+		color: $text-color;
+		font-size: 28px;
+		margin-bottom: 22px;	
+		text-align: center;	
+		@include tablet {
+			font-size: 36px;
+			margin-bottom: 45px;
+		}
+		&:after {
+			content: '';
+			display: block;
+			height: 4px;
+			width: 79px;
+			background-color: $accent-one;
+			margin: 10px auto 0;
+			@include tablet {
+				margin: 16px auto 0;
+			}
+		}
+	}
+	&__grid {
+		display: flex;
+		flex-wrap: wrap;
+		max-width: 1020px;
+		justify-content: center;
+		margin: auto;
+	}
+	&__item {
+		margin: 32px 27px;
+		max-width: 150px;
+		&:hover {
+			text-decoration: none;
+			.grid-people__image-wrapper {
+				&:before {
+					content: "";
+					display: block;
+					position: absolute;
+					background-color: rgba(13,48,67,0.39);
+					width: 150px;
+					height: 150px;
+					border-radius: 50%;
+					z-index: 4;
+				}
+			}
+		}
+	}
+	&__image-wrapper {
+		width: 150px;
+		height: 150px;
+		position: relative;
+		img {
+			border-radius: 50%;
+			position: relative;
+			z-index: 3;
+			display: block;
+			width: 100%;
+			height: auto;
+		}
+		&:after {
+			content: "";
+			display: inline-block;
+			position: absolute;
+			background: $accent-one;
+			width: 158px;
+			height: 158px;
+			border-radius: 50%;
+			top: -4px;
+			left: -4px;
+			z-index: 2;
+		}
+	}
+	&__hed {
+		@include hedfont;
+		color: $text-color;
+		font-size: 15px;
+		text-align: center;
+		margin-top: 15px;
+	}
+	&__sub {
+		@include hedfont;
+		color: $text-color;
+		font-size: 10px;
+		font-weight: 500;
+		line-height: 1.4;
+		letter-spacing: 0.1em;
+		text-transform: uppercase;
+		margin-top: 10px;
+		text-align: center;
+	}
+}
+
+#alumni-grid, #current-grid {
+	display: none;
+}

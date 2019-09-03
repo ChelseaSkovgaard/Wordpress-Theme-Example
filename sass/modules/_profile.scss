@@ -1,0 +1,161 @@
+.profile {
+	position: relative;
+	border-top: 1px solid white;
+	margin: 3px 4px 20px;
+	@include notebook {
+		border-top: 1px solid white;
+		margin: 11px 12px 40px;
+	}
+	&__content {
+		display:flex;
+		flex-wrap: wrap;
+		flex-direction: column;
+		align-items: center;
+		z-index: 2;
+		padding: 100px 20px 0;
+		@include phablet {
+			flex-direction: row;
+			justify-content: center;
+			align-items: flex-start;
+		}
+		@include tablet {
+			padding-top: 147px;
+		}
+	}
+	&__header {
+		padding-top: 28px;
+		position: relative;
+		z-index: 3;
+		@include phablet {
+			padding-top: 110px;
+			margin-left: 32px;
+			max-width: 325px;
+		}
+		@include tablet {
+			padding-top: 148px;
+			max-width: 422px;
+		}
+	}
+	&__hed {
+		@include hedfont;
+		color: $background-alt;
+		font-size: 28px;
+		margin-bottom: 10px;		
+		@include phablet {
+			font-size: 36px;
+			margin-bottom: 15px;
+		}
+		&:after {
+			content: '';
+			display: block;
+			height: 4px;
+			width: 130px;
+			background-color: $accent-one;
+			margin-top: 8px;
+			@include tablet {
+				margin-top: 12px;
+			}
+		}
+	}
+	&__title {
+		@include hedfont;
+		color: $background-alt;
+		font-size: 16px;
+		font-weight: 500;
+		letter-spacing: 0.1em;
+		line-height: 1.4;
+		text-transform: uppercase;
+		margin-bottom: 8px;
+		@include notebook {
+			font-size: 20px;
+			margin-bottom: 12px;
+		}
+	}
+	&__sub {
+		@include hedfont;
+		color: $background-alt;
+		font-size: 12px;
+		font-weight: 500;
+		letter-spacing: 0.1em;
+		@include notebook {
+			font-size: 15px;
+		}
+	}
+	&__email {
+		@include hedfont;
+		color: $background-alt;
+		font-size: 12px;
+		font-weight: 500;
+		letter-spacing: 0.1em;
+		@include notebook {
+			font-size: 15px;
+		}
+		&:hover {
+			color: $link-hover;
+		}
+	}
+	&__image-wrapper {
+		width: 190px;
+		height: 190px;
+		position: relative;
+		@include tablet {
+			width: 290px;
+			height: 290px;
+		}
+		@include notebook {
+			width: 350px;
+			height: 350px;
+		}
+		@include desktop {
+			width: 410px;
+			height: 410px;
+		}
+		img {
+			border-radius: 50%;
+			position: relative;
+			z-index: 3;
+			display: block;
+			width: 100%;
+			height: auto;
+		}
+		&:after {
+			content: "";
+			display: inline-block;
+			position: absolute;
+			background: $accent-one;
+			width: 198px;
+			height: 198px;
+			border-radius: 50%;
+			top: -4px;
+			left: -4px;
+			z-index: 2;
+			@include tablet {
+				width: 298px;
+				height: 298px;
+			}
+			@include notebook {
+				width: 358px;
+				height: 358px;
+			}
+			@include desktop {
+				width: 418px;
+				height: 418px;
+			}
+		}
+	}
+	&:before{
+		content: '';
+		display: block;
+		background-color: $background-alt;
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		height: 190px;
+		width: 100%;
+		z-index: 1;
+		@include tablet {
+			height: 271px;
+		}
+	}
+}

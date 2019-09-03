@@ -1,0 +1,145 @@
+.post-grid {
+	&__section {
+		display: flex;
+		flex-wrap: wrap;
+	}
+	&__highlight {
+		width: 100%;
+		@include notebook {
+			width: calc(58% - 10px);
+			margin-right: 10px;
+		}
+	}
+	&__sub {
+		width: 100%;
+		@include notebook {
+			width: 42%;
+		}
+	}
+	&__link-highlight {
+		display: block;
+		position: relative;
+		padding: 246px 16px 16px;
+		margin: 4px 0 0;
+		@include notebook {
+			padding: 358px 40px 40px;
+			margin: 0 0;
+		}
+		&:after {
+			content: '';
+			background: linear-gradient(0deg, #071F2A 0%, rgba(6,31,41,0) 100%);
+			display: block;
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			z-index: 1;
+		}
+		&:hover {
+			text-decoration: none;
+			&:after {
+				background: linear-gradient(0deg, #071F2A 0%, rgba(6,31,41,0.54) 100%);
+			}
+		}
+	}
+	&__link-sub {
+		box-sizing: border-box;
+		display: flex;
+		align-items: flex-end;
+		position: relative;
+		height: calc(50% - 5px);
+		padding: 246px 16px 16px;
+		margin: 4px 0 0;
+		&:hover {
+			text-decoration: none;
+		}
+		&:first-child {
+			@include notebook {
+				margin-bottom: 10px;
+			}
+		}
+		&:after {
+			content: '';
+			background: linear-gradient(0deg, #071F2A 0%, rgba(6,31,41,0) 100%);
+			display: block;
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			z-index: 1;
+		}
+		@include notebook {
+			padding: 30px;
+			margin: 0 0;
+			&:hover {
+				&:after {
+					background: linear-gradient(0deg, #071F2A 0%, rgba(6,31,41,0.54) 100%);
+				}
+			}
+		}
+	}
+	&__content {
+		position: relative;
+		z-index: 3;
+	}
+	&__hed {
+		@include hedfont;
+		color: $text-color-alt;
+		font-size: 20px;	
+		line-height: 1.15;	
+		text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+		margin-bottom: 10px;
+		@include notebook {
+			font-size: 32px;
+			margin-bottom: 16px;
+		}
+	}
+	&__dek {
+		color: $text-color-alt;
+		font-size: 18px;
+		line-height: 1.38;
+		margin-top: 16px;
+		display: none;
+		@include notebook {
+			display: block;
+		}
+	}
+	&__author {
+		@include hedfont;
+		color: $accent-one;
+		font-size: 17px;
+		font-weight: 600;
+		line-height: 1.17;
+	}
+	&__image-wrapper {
+		display: block;
+		width: 100%;
+    position: relative;
+		overflow: hidden;
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		picture {
+			display: block;
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			img {
+				width: 100%;
+				height: auto;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				-webkit-transform: translate(-50%,-50%);
+				-ms-transform: translate(-50%,-50%);
+				transform: translate(-50%,-50%);
+			}
+		}
+	}
+}

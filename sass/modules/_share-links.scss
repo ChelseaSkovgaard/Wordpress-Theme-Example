@@ -1,0 +1,66 @@
+.share-links {
+	display: none;
+	position: absolute;
+	padding-top: 40px;
+	left: 24px;
+	@include notebook {
+		display:block;
+	}
+	&__hed {
+		@include hedfont;
+		color: $text-color-alt-2;
+		font-size: 18px;
+		font-weight: 600;
+		text-align: center;
+		line-height: 1.33;
+		margin-bottom: 5px;
+	}
+	&__link {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		border: 2px solid $accent-one;
+		border-radius: 50%;
+		height: 36px;
+		width: 36px;
+		margin: 6px 6px;
+		&:hover {
+			.share-links__icon {
+				fill: $accent-one;
+			}
+		}
+	}
+	&__icon {
+		fill: $svg-fill;
+		&--facebook {
+			height: 19.34px;
+			width: 9px;
+		}
+		&--twitter {
+			height: 15.14px;
+			width: 17.18px;
+		}
+		&--email {
+			height: 13px;
+			width: 21px;
+		}
+	}
+}
+
+.entry__container {
+	position: relative;
+}
+.share-links {
+	position: absolute;
+	left: 24px;
+}
+.share-links.share-links-fixed {
+	position: fixed;
+	top: 0;
+}
+.share-links.share-links-stop {
+	position: absolute;
+	left: 24px;
+	bottom: 0;
+	top: auto;
+}

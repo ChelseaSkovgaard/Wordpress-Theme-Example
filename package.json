@@ -1,0 +1,41 @@
+{
+  "name": "RevMsg-Template",
+  "version": "3.2.0",
+  "repository": "git@revmsg.beanstalkapp.com:/wordpressthemes.git",
+  "license": "(ISC OR GPL-3.0)",
+  "dependencies": {
+    "@types/dw-bxslider-4": "~4.2.5",
+    "jquery": "^3.1.1",
+    "jquery-form": ">=3.5.0",
+    "jquery-lazyload": ">=1.9.3",
+    "js-cookie": ">=1.5.1",
+    "lazysizes": "^1.2.2",
+    "moment": "^2.22.2",
+    "picturefill": "^2.2.0",
+    "respond.js": ">=1.3.0",
+    "spin.js": "^4.0.0",
+    "svg4everybody": "^2.1.9"
+  },
+  "devDependencies": {
+    "animate.scss": "^0.0.6",
+    "autoprefixer": "^9.4.2",
+    "gulp": "^4.0.0",
+    "gulp-coffee": "^2.3.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-cssnano": "^2.1.3",
+    "gulp-filter": "^5.1.0",
+    "gulp-images-resizer": "0.0.5",
+    "gulp-inject": "^4.1.0",
+    "gulp-insert": "^0.5.0",
+    "gulp-merge-media-queries": "^0.2.1",
+    "gulp-postcss": "^7.0.1",
+    "gulp-rename": "^1.4.0",
+    "gulp-replace": "~0.5.4",
+    "gulp-sass": "^4.0.2",
+    "gulp-sourcemaps": "^2.6.4",
+    "gulp-touch-cmd": "0.0.1",
+    "gulp-uglify": "^1.5.2",
+    "gulp-watch": "^5.0.1",
+    "rummelize": "git+https://github.com/revolution-messaging/rummelize.git"
+  }
+}

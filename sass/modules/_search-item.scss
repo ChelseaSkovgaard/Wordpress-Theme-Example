@@ -1,0 +1,47 @@
+.search-item {
+	margin-bottom: 18px;
+	@include tablet {
+		margin-bottom: 32px;
+	}
+	&__container {
+		max-width: 700px;
+		margin: 0 auto;
+		padding: 40px 18px;
+	}
+	&__hed {
+		@include hedfont;
+		display: block;
+		color: $text-color;
+		font-size: 24px;
+		letter-spacing: 0.04em;
+		line-height: 1.19;
+		text-decoration: none;
+		margin-bottom: 12px;
+		@include tablet {
+			font-size: 36px;
+			margin-bottom: 19px;
+		}
+		&:hover{
+			color: $accent-one;
+		}
+	}
+	&__dek {
+		color: $text-color-alt-2;	
+		font-size: 14px;
+		line-height: 1.47;
+		@include tablet {
+			font-size: 19px
+		}
+	}
+	&__no-posts {
+		@include hedfont;
+		color: $text-color;
+		font-size: 18px;
+		text-align: center;
+		padding: 20px;
+		@include notebook {
+			font-size: 26px;
+			padding: 32px;
+		}
+	}
+}

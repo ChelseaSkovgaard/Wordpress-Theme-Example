@@ -1,0 +1,70 @@
+/*
+Theme Name: Sample Theme
+Description: Sample theme based on client theme with client specifics removed. File structure and build process based on boilerplate by Joe Pahl
+Author: Chelsea Skovgaard
+
+-------------------------------------------------------------------------------*/
+
+@import "../node_modules/reset-css/sass/reset";
+@import "helpers/colors";
+@import "helpers/mixins";
+@import "helpers/defaults";
+@import "helpers/button";
+
+//@import "wrappers/";
+@import "wrappers/site_hed";
+@import "wrappers/site_nav_hed";
+@import "wrappers/site_nav_foot";
+@import "wrappers/site_foot";
+
+//@import "modules/";
+@import "modules/entry";
+@import "modules/author";
+@import "modules/banner";
+@import "modules/card";
+@import "modules/carousel-logos";
+@import "modules/carousel-people";
+@import "modules/carousel-video";
+@import "modules/cta";
+@import "modules/feature";
+@import "modules/grid-partners";
+@import "modules/grid-people";
+@import "modules/home-section";
+@import "modules/item";
+@import "modules/list-item";
+@import "modules/marquee";
+@import "modules/marquee-single";
+@import "modules/modal";
+@import "modules/not-found";
+@import "modules/post-grid";
+@import "modules/profile";
+@import "modules/search-form";
+@import "modules/share-links";
+@import "modules/search-item";
+@import "modules/toggle";
+
+
+
+// Prevent lazyload from displaying alt tags before image loads
+.lazyload,
+.lazyloading {
+	opacity: 0;
+	transition: opacity 300ms ease-in-out; //transition doesn't work :'(
+}
+img.lazyloaded {
+	opacity: 1;
+}
+.pxl {
+ @include clipIt;
+}
+img.pxl {
+  bottom: -1px;
+}
+.sprite {
+  display: none;
+}
+@import "plugins/_inbed-all";
+@import "plugins/_slick";
+@import "plugins/_slick-theme";
+@import "helpers/fallbacks";
+

@@ -1,0 +1,97 @@
+.marquee-single {
+	background-color: $background-alt;
+	position: relative;
+	border-top: 1px solid white;
+	box-sizing: border-box;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	padding: 64px 20px 32px;
+	margin: 3px 4px 16px;
+	@include notebook {
+		border-top: 1px solid white;
+		min-height: 443px;
+		padding: 32px 20px 32px;
+		margin: 11px 12px 8px;	
+	}
+	&__hed {
+		@include hedfont;
+		color: $text-color-alt;
+		font-size: 28px;
+		line-height: 1.1;
+		margin-bottom: 18px;
+		max-width: 800px;		
+		text-align: center;
+		@include tablet {
+			font-size: 36px;
+			margin-bottom: 24px;
+		}
+		&:after {
+			content: '';
+			display: block;
+			height: 4px;
+			width: 79px;
+			background-color: $accent-one;
+			margin: 8px auto 0;
+			@include tablet {
+				margin: 10px auto 0;
+			}
+		}
+	}
+	&__sub {
+		color: $text-color-alt;
+		font-size: 14px;
+		display: flex;
+		justify-content: center;
+		@include tablet {
+			font-size: 18px;
+			min-width: 700px;
+		}
+		p {
+			width: 50%;
+			margin-right: 22px;
+			text-align: right;
+			&:last-child {
+				margin-right: 0;
+				margin-left: 22px;
+				text-align: left;
+			}
+		}
+	}
+	&__image {
+		position: relative;
+		width: 83%;
+		max-width: 750px;
+		margin: 0px auto 0px;
+		padding-top: 60%;
+		overflow: hidden;
+		img {
+			width: 100%;
+			height: auto;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%,-50%);
+		}
+		@include notebook{
+			margin: -120px auto 0px;
+			padding-top: 32%;
+		}
+	}
+	&__caption {
+		color: $text-color-alt-2;
+		font-size: 12px;
+		font-weight: bold;
+		text-align: center;
+		text-transform: uppercase;
+		margin-top: 8px;
+		line-height: 1.7;
+		@include tablet {
+			font-size: 14px;
+		}
+	}
+	&--search {
+		padding-top: 60px;
+	}
+}

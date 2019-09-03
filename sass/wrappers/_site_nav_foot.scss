@@ -1,0 +1,109 @@
+.footer {
+	.nav {
+		text-align: center;
+		margin-bottom: 37px;
+		@include notebook {
+			text-align: left;
+		}
+		&__link {
+			@include hedfont;
+			display: block;
+			color: $accent-one;
+			font-size: 16px;
+			line-height: 1.2;
+			letter-spacing: 0.059em;
+			text-transform: uppercase;
+			margin-bottom: 18px;
+			@include notebook {
+				margin-bottom: 24px;
+				padding: 0;
+				&:after {
+					content: '';
+					display: block;
+					background: transparent;
+					height: 1px;	
+					width: 34px;
+				}
+				&:hover {
+					&:after {
+						content: '';
+						display: block;
+						background: $accent-one;
+						height: 1px;	
+						width: 34px;
+					}
+				}
+			}
+			&:hover {
+				color: $link-color-alt;
+				text-decoration: none;
+			}
+		}
+	}
+	.sub-menu {
+		.nav {
+			&__link {
+				color: $link-color-alt;
+				font-weight: 600;
+				text-transform: none;
+				@include notebook {
+					margin-bottom: 20px;
+					&:after {
+						display: none;
+					}
+				}
+				&:hover {
+					color: $accent-one;
+					text-decoration: none;
+				}
+			}
+		}
+	}
+	.sm-nav {
+		display: flex;
+		justify-content: center;
+		margin: 32px 0;
+		@include notebook {
+			margin: 0 0;
+		}
+		&__link {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			border: 2px solid $accent-one;
+			border-radius: 50%;
+			height: 36px;
+			width: 36px;
+			margin: 0 6px;
+			&:first-child {
+				margin: 0 6px 0 0;
+			}
+		}
+		&__icon {
+			fill: $svg-fill-alt;
+			&:hover {
+				fill: $accent-one;
+			}
+			&--facebook {
+				height: 19.34px;
+				width: 9px;
+			}
+			&--twitter {
+				height: 15.14px;
+				width: 17.18px;
+			}
+			&--instagram {
+				height: 18.5px;
+				width: 18px;
+			}
+			&--linkedin {
+				height: 16.82px;
+				width: 16.63px;
+			}
+			&--youtube {
+				height: 15.14px;
+				width: 19.96px;
+			}
+		}
+	} 
+}

@@ -1,0 +1,118 @@
+.carousel-video {
+	position: relative;
+	visibility: hidden;
+	@include notebook {
+		margin: 0 12px;
+	}
+	&.slick-initialized {
+		visibility: visible;
+	}
+	&:before {
+    content:'';
+    position:absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    height: 100%;
+    width: 32px;
+    background: linear-gradient(270deg, rgba(13,48,67,0) 0%, #040C10 100%);
+    @include notebook {
+      width:112px;
+    }
+	}
+	&:after {
+    content:'';
+    position:absolute;
+    right: 0;
+    top: 0;
+    z-index: 1;
+    height: 100%;
+    width: 32px;
+    background: linear-gradient(270deg, #071F2A 0%, rgba(13,38,51,0) 100%);
+    @include notebook {
+      width:112px;
+    }
+  }
+	&__card {
+		display: block;
+		position: relative;
+		margin: 0 2.5px;
+		overflow: hidden;
+		@include notebook {
+			margin: 0 4px;
+			&:hover {
+				text-decoration: none;
+				&:before {
+					background: linear-gradient(rgba(7, 31, 43, .43), rgba(7, 31, 43, .98));
+				}
+				.carousel-video__icon {
+					fill: $accent-one;
+				}
+			}
+		}
+		&:before {
+			content: "";
+			display: block;
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			z-index: 1;
+			background: linear-gradient(rgba(7, 31, 43, 0), rgba(7, 31, 43, .98));
+		}
+	}
+	&__title {
+		@include hedfont;
+		color: $text-color-alt;
+		font-weight: 600;
+		text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+		padding: 20px 12px 12px;
+		position: absolute;
+		bottom: 0;
+		left: 0; right: 0;
+	}
+	&__icon {
+		position: absolute;
+		fill: transparent;
+		height: 37px;
+		width: 37px;
+		top: 45%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+	&__content {
+		z-index: 2;
+		position: absolute;
+		top: 0; bottom: 0;
+		left: 0; right: 0;
+	}
+	&__image {
+		display: block;
+		position: relative;
+		padding-top: 56.25%;
+		overflow: hidden;
+		img {
+			width: 100%;
+			height: auto;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%,-50%);
+		}
+	}
+	.slick-arrow {
+		height: auto;
+	}
+}
+
+//used for videos and people carousel
+.carousel__arrow {
+	fill: $svg-fill-alt;
+	width: 20px;
+	height: 34px;
+	@include notebook {
+		width: 20px;
+		height: 34px;
+	}
+}

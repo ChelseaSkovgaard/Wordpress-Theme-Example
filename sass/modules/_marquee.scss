@@ -1,0 +1,221 @@
+.marquee {
+	position: relative;
+	border-top: 1px solid white;
+	margin: 3px 4px 16px;
+	@include notebook {
+		border-top: 1px solid white;
+		min-height: 443px;
+		margin: 11px 12px 8px;
+	}
+	&__hed {
+		position: relative;
+		z-index: 3;
+		max-width: 290px;
+		margin-top: -27px;
+		margin-left: 18px;
+		@include notebook {
+			max-width: 680px;
+			padding: 300px 61px 51px;
+		}
+		@include huge {
+			max-width: 680px;
+		}
+	}
+	&__hed-wrapper {
+		@include hedfont;
+		color: $text-color-alt;
+		font-size: 25px;
+		letter-spacing: 0.042em;
+		box-shadow: -7px 0 0 3px $accent-one, 7px 0 0 3px $accent-one; /* Tune line "padding" here for background color for multi-line background with breaks*/
+  	background-color: $accent-one;
+		line-height: 1.6; /* Tune "margin" for multi-line background*/
+		text-transform: uppercase;
+		@include tablet {
+			font-size: 32px;
+		}
+		@include notebook {
+			font-size: 40px;
+		}
+		@include desktop {
+			font-size: 44px;
+		}
+		@include huge {
+			font-size: 52px;
+		}
+	}
+	&__image-wrapper {
+		height: 300px;
+		display: block;
+		width: 100%;
+    position: relative;
+		overflow: hidden;
+		user-select: none;
+		@include notebook {
+			position: absolute;
+			top: 0; bottom: 0;
+			left: 0; right: 0;
+			height: auto;
+			z-index: -1;
+		}
+		picture {
+			display: block;
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			img {
+				width: 100%;
+				height: auto;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				-webkit-transform: translate(-50%,-50%);
+				-ms-transform: translate(-50%,-50%);
+				transform: translate(-50%,-50%);
+			}
+		}
+		&:before {
+			content: "";
+			display: block;
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			z-index: 1;
+			opacity: .3;
+			background-color: $overlay;
+		}
+		&:after {
+			content: "";
+			display: block;
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			z-index: 2;
+			background: linear-gradient(rgba(17, 41, 54, .5), transparent 33%);
+		}
+	}
+	&--frontpage {
+		@include notebook {
+			min-height: 648px;
+		}
+		.marquee__hed {
+			@include phablet {
+				max-width: 500px;
+			}
+			@include tablet {
+				max-width: 650px;
+			}
+			@include notebook {
+				max-width: 860px;
+				padding: 468px 61px 51px;
+			}
+			@include huge {
+				max-width: 1000px;
+			}
+		}
+		.marquee__hed-wrapper {
+			span {
+				color: $text-color;
+			}
+		}
+	}
+	&--interior {
+		@include notebook {
+			display: flex;
+			align-items: flex-end;
+		}
+	}
+	&--give {
+		@include notebook {
+			min-height: 450px;
+		}
+		@include desktop {
+			min-height: 514px;
+		}
+		@include huge {
+			min-height: 562px;
+		}
+		.marquee__image-wrapper {
+			@include phablet {
+				height: 408px;
+			}
+			@include notebook {
+				height: auto;
+			}
+		}
+		.marquee__content {
+			@include phablet {
+				width: 340px;
+				margin: 0 auto;
+			}
+			@include tablet {
+				width: 330px;
+				position: absolute;
+				bottom: 0;
+				right: 0;
+				padding-bottom: 32px;
+				padding-right: 32px;
+				z-index: 2;
+			}
+			@include notebook {
+				width: 516px;
+			}
+			@include desktop {
+				padding-bottom: 64px;
+				padding-right: 64px;
+				width: 564px;
+			}
+			@include huge {
+				width: 663px;
+				padding-bottom: 96px;
+				padding-right: 96px;
+			}
+		}
+		.marquee__hed {
+			max-width: none;
+			text-align: center;
+			margin-left: -4px;
+			margin-right: -4px;
+			@include notebook {
+				padding: 0;
+			}
+		}
+		.marquee__hed-wrapper {
+			font-size: 25px;
+			@include notebook {
+				font-size: 40px;
+			}
+			@include desktop {
+				font-size: 44px;
+			}
+			@include huge {
+				font-size: 52px;
+			}
+		}
+		.marquee__sub {
+			text-align: center;
+			font-size: 18px;
+			margin: 0.4em auto 0;
+			line-height: 1.4;
+			padding: 0 11px;
+			max-width: 360px;
+			@include tablet {
+				margin: 0.4em 11px 0;
+				padding: 0;
+				color: $text-color-alt;
+				text-align: left;
+				font-weight: 700;
+				text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+			}
+			@include notebook {
+				max-width: 500px;
+			}
+		}
+	}
+}
+

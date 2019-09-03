@@ -1,0 +1,24 @@
+{
+  "name": "rummelize",
+  "version": "1.0.0",
+  "homepage": "https://github.com/jeffrummel/rummelize",
+  "authors": [
+    "Jeff Rummel <jeff@jeffrummel.com>"
+  ],
+  "description": "CSS Reset built for SCSS",
+  "main": "reset.scss",
+  "keywords": [
+    "sass",
+    "css",
+    "reset",
+    "scss"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

@@ -1,0 +1,46 @@
+.list-item {
+	&__section {
+		margin: 16px;
+		@include notebook {
+			margin: 64px;
+		}
+		@include desktop {
+			padding: 0 64px;
+			margin: 64px auto;
+		}
+	}
+	&__header {
+		@include hedfont;
+		color: $text-color;
+		font-size: 28px;
+		margin-bottom: 18px;
+		@include tablet {
+			font-size: 36px;
+		}
+		@include notebook {
+			font-size: 48px;
+			margin-bottom: 26px;
+		}
+	}
+	&__hed {
+		@include hedfont;
+		color: $text-color;
+		font-size: 22px;
+		letter-spacing: 0.04em;
+		margin-bottom: 12px;	
+		@include tablet {
+			font-size: 36px;
+			margin-bottom: 18px;
+		}
+	}
+	&__sub {
+		color: $text-color-alt-2;
+		font-size: 16px;	
+		line-height: 1.4;
+		margin-bottom: 12px;
+		@include tablet {
+			font-size: 19px;	
+			margin-bottom: 18px;
+		}
+	}	
+}

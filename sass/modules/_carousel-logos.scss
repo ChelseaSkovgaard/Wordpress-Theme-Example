@@ -1,0 +1,63 @@
+.carousel-logos {
+	width: 240px;
+	visibility: hidden;
+	@include tablet {
+		width: 480px;
+	}
+	&.slick-initialized {
+		visibility: visible;
+	}
+	&__header {
+		@include hedfont;
+		color: $text-color;
+		font-size: 20px;
+		line-height: 1.35;
+		margin-bottom: 14px;
+		margin-top: 44px;
+		&--feature {
+			margin-top: 16px;
+		}
+	}
+	&__card {
+		position: relative;
+		margin: 0 5px;
+	}
+	&__image-wrapper {
+		height: 60px;
+		width: 60px;
+		position: relative;
+		picture {
+			display: block;
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			img {
+				-webkit-filter: grayscale(100%);
+				filter: grayscale(100%);
+				width: 100%;
+				height: auto;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%,-50%);
+			}
+		}
+	}
+	.slick-prev{
+		height: auto;
+		display: none !important;
+	}
+	.slick-next {
+		right: -15px;
+		svg {
+			fill: $svg-fill-alt-2;
+		}
+	}
+	&--team {
+		.slick-track{
+			margin-left: 0;
+		}
+	}
+}

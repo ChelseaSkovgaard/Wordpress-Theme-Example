@@ -1,0 +1,178 @@
+// Search Form in Header
+.header {
+	.search-form {
+		@include notebook {
+			margin-right: 12px;
+		}
+		@include huge {
+			width: 170px;
+		}
+		body.expand & {
+			position: absolute;
+			top: 8px;
+			left: 8px;
+			@include notebook {
+				position: relative;
+			}
+		}
+		&__submit {
+			@include clipIt;
+		}
+		&__input {
+			@include hedfont;
+			display: block;
+			position: relative;
+			z-index: 11;
+			max-width: 0;
+			color: $text-color;
+			border: none;
+			background: transparent;
+			font-size: 14px;
+			line-height: normal;
+			padding: 0;
+			transition: max-width 300ms ease-in-out;
+			@include placeholder {
+				text-transform: uppercase;
+			}
+			@include notebook{
+				color: $text-color-alt;
+				transition: max-width 0ms;
+				@include placeholder {
+					color: $text-color-alt;
+				}
+			}
+			@include huge {
+				transition: max-width 300ms ease-in-out;
+			}
+			&--active {
+				max-width: 200px;
+				@include notebook{
+					max-width: 150px;
+				}
+				@include huge {
+					max-width: 120px;
+				}
+			}
+		}
+		&__inner {
+			display: flex;
+			align-items: center;
+			border-radius: 20px;
+			padding: 11px;
+			@include notebook{
+				position: relative;
+			}
+			&--active {
+				margin: 0 0 0 0;
+				border: 1px $accent-one solid;
+			}
+		}
+		&__icon {
+			order: -1;
+			padding: 0;
+			border: none;
+			display: block;
+			background: transparent url("data:image/svg+xml,%3Csvg viewBox='0 0 28 28' xmlns='http://www.w3.org/2000/svg'%3E%3Cg transform='translate(3 3)' stroke='%230D3043' stroke-width='3' fill='none' fill-rule='evenodd'%3E%3Ccircle cx='8' cy='8' r='9.5'/%3E%3Cpath d='M16.117 16.117l6.375 6.375' stroke-linecap='square'/%3E%3C/g%3E%3C/svg%3E") no-repeat 0 0;
+			background-size: cover;
+			text-indent: 25px;
+			overflow: hidden;
+			width: 24px;
+			height: 24px;
+			margin-right: 8px;
+			@include notebook{
+				position: relative;
+				z-index: 11;
+				width: 16px;
+				height: 16px;
+				background: transparent url("data:image/svg+xml,%3Csvg viewBox='0 0 28 28' xmlns='http://www.w3.org/2000/svg'%3E%3Cg transform='translate(3 3)' stroke='%23FFFFFF' stroke-width='3' fill='none' fill-rule='evenodd'%3E%3Ccircle cx='8' cy='8' r='9.5'/%3E%3Cpath d='M16.117 16.117l6.375 6.375' stroke-linecap='square'/%3E%3C/g%3E%3C/svg%3E") no-repeat 0 0;
+				&:hover {
+					background: transparent url("data:image/svg+xml,%3Csvg viewBox='0 0 28 28' xmlns='http://www.w3.org/2000/svg'%3E%3Cg transform='translate(3 3)' stroke='%2397C93D' stroke-width='3' fill='none' fill-rule='evenodd'%3E%3Ccircle cx='8' cy='8' r='9.5'/%3E%3Cpath d='M16.117 16.117l6.375 6.375' stroke-linecap='square'/%3E%3C/g%3E%3C/svg%3E") no-repeat 0 0;
+				}
+			}
+			&--active {
+				width: 16px;
+				height: 16px;
+				margin-right: 8px;
+				background: transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 34.531 34.528'%3E%3Cpath fill='%2397C93D' d='M.293 1.707A.999.999 0 0 1 .294.293a.999.999 0 0 1 1.414 0l16.265 16.264a1.001 1.001 0 0 1-1.415 1.416L.293 1.707z'/%3E%3Cpath fill='%2397C93D' d='M1.71 34.236A1 1 0 1 1 .295 32.82L16.56 16.555a1 1 0 1 1 1.415 1.416L1.71 34.236z'/%3E%3Cg%3E%3Cpath fill='%2397C93D' d='M34.238 32.821a.999.999 0 1 1-1.414 1.414L16.558 17.972a1 1 0 0 1 .002-1.414 1 1 0 0 1 1.413-.002l16.265 16.265z'/%3E%3Cpath fill='%2397C93D' d='M32.821.292a1 1 0 1 1 1.415 1.416L17.971 17.974a1 1 0 1 1-1.415-1.416L32.821.292z'/%3E%3C/g%3E%3C/svg%3E") no-repeat 0 0;
+				@include notebook {
+					width: 18px;
+				height: 18px;
+					&:hover {
+						width: 18px;
+				height: 18px;
+						background: transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 34.531 34.528'%3E%3Cpath fill='%23FFFFFF' d='M.293 1.707A.999.999 0 0 1 .294.293a.999.999 0 0 1 1.414 0l16.265 16.264a1.001 1.001 0 0 1-1.415 1.416L.293 1.707z'/%3E%3Cpath fill='%23FFFFFF' d='M1.71 34.236A1 1 0 1 1 .295 32.82L16.56 16.555a1 1 0 1 1 1.415 1.416L1.71 34.236z'/%3E%3Cg%3E%3Cpath fill='%23FFFFFF' d='M34.238 32.821a.999.999 0 1 1-1.414 1.414L16.558 17.972a1 1 0 0 1 .002-1.414 1 1 0 0 1 1.413-.002l16.265 16.265z'/%3E%3Cpath fill='%23FFFFFF' d='M32.821.292a1 1 0 1 1 1.415 1.416L17.971 17.974a1 1 0 1 1-1.415-1.416L32.821.292z'/%3E%3C/g%3E%3C/svg%3E") no-repeat 0 0;
+					}
+				}
+
+			}
+		}
+
+	}
+}
+
+//Search Form in Search Results and Blog Page
+.search-form-interior {
+	&__wrapper {
+		display: flex;
+		justify-content: center;
+		margin-bottom: 38px;
+		@include tablet {
+			margin-top: 60px;
+		}	
+	}
+	&__input {
+		color: $text-color;
+		font-size: 14px;
+		padding: 12px 25px;
+		border: 2px solid $border-color-alt-2;	
+		border-radius: 22px !important;
+		width: calc(100%);
+		margin: 20px auto;
+		@include placeholder {
+			text-transform: uppercase;
+		}
+		@include tablet {
+			width: auto;
+			min-width: 420px;
+			margin-right: 16px;
+		}
+		&--blog {
+			border: 2px solid $border-color;
+			margin: 20px auto;
+			@include tablet {
+				margin:0 16px 0 0;
+			}
+			&:focus {
+				outline: none;
+			}
+		}
+	}
+	&__submit {
+		@include hedfont;
+		background-color: transparent;
+		color: $text-color-alt;
+		font-size: 14px;
+		text-transform: uppercase;
+		padding: 12px 32px;
+		border: 2px solid $border-color-alt-2;	
+		border-radius: 22px !important;
+		width: calc(100%);
+		margin: auto;
+		@include tablet {
+			width: auto;
+		}
+		&:hover {
+			background: linear-gradient(270deg, #97C93D 0%, #73AA04 100%);
+			border: none;
+			padding: 14px 34px;
+		}
+		&--blog {
+			color: $text-color;
+			border: 2px solid $border-color-alt;
+			&:hover {
+				color: $text-color-alt;
+			}
+		}
+	}
+
+}
