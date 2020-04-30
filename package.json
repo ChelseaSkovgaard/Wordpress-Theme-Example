@@ -5,7 +5,7 @@
   "license": "(ISC OR GPL-3.0)",
   "dependencies": {
     "@types/dw-bxslider-4": "~4.2.5",
-    "jquery": "^3.1.1",
+    "jquery": "^3.5.0",
     "jquery-form": ">=3.5.0",
     "jquery-lazyload": ">=1.9.3",
     "js-cookie": ">=1.5.1",
